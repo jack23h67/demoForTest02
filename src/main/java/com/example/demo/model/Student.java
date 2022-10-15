@@ -14,39 +14,44 @@ public class Student {
         return id;
     }
 
-    public void setId(Integer id) {
+    public Student setId(Integer id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Student setName(String name) {
         this.name = name;
+        return this;
     }
 
     public Double getScore() {
         return score;
     }
 
-    public void setScore(Double score) {
+    public Student setScore(Double score) {
         this.score = score;
+        return this;
     }
 
     public boolean isGraduate() {
         return graduate;
     }
 
-    public void setGraduate(boolean graduate) {
+    public Student setGraduate(boolean graduate) {
         this.graduate = graduate;
+        return this;
     }
 
     public Date getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public Student setCreateDate(Date createDate) {
         this.createDate = createDate;
+        return this;
     }
 }
