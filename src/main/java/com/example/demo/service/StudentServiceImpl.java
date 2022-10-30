@@ -3,14 +3,14 @@ package com.example.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.mapper.StudentAccountMapper;
+import com.example.demo.dao.StudentDao;
 import com.example.demo.model.Student;
 
 @Component
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
-    private StudentAccountMapper studentAccountMapper;
+    private StudentDao studentAccountMapper;
 
     @Override
     public Integer insert(Student student) {
