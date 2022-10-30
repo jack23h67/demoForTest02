@@ -1,13 +1,32 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Student {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="STUDENT")
+public class Student implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@Column(name="ID")
     private Integer id;
+    
+    @Column(name="NAME", nullable=false)
     private String name;
+    
+    @Column(name="SCORE", nullable=false)
     private Double score;
+    
+    @Column(name="GRADUATE", nullable=false)
     private boolean graduate;
+    
+    @Column(name="CREATE_DATE", nullable=false)
     private Date createDate;
 
     public Integer getId() {
