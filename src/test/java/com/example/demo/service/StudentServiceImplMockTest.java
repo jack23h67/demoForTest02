@@ -26,8 +26,9 @@ public class StudentServiceImplMockTest {
 	@Test
 	public void testGetById() {
 		Student mockst = new Student();
-		mockst.setId(100);
-		mockst.setName("I'm mock");
+		mockst.setName("I'm mock")
+		      .setScore(70.0)
+		      .setGraduate(true);
 		
 		Mockito.when(studentDao.getById(Mockito.any())).thenReturn(mockst);
 		//Mockito.doReturn(mockst).when(studentDao.getById(Mockito.any()));
@@ -37,9 +38,9 @@ public class StudentServiceImplMockTest {
 		
 		//Mockito.verify(studentDao, Mockito.times(2)).getById(Mockito.any());
 		
-		Student st = studentService.getById(3);
+		Student st = studentService.getById(4);
 		assertNotNull(st);
-		assertEquals(100, st.getId());
+		assertEquals(5, st.getId());
 		assertEquals("I'm mock", st.getName());
 	}
 

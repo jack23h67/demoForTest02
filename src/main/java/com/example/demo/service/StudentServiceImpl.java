@@ -1,33 +1,34 @@
 package com.example.demo.service;
 
-import com.example.demo.dao.StudentDao;
-import com.example.demo.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.example.demo.mapper.StudentAccountMapper;
+import com.example.demo.model.Student;
 
 @Component
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
-    private StudentDao studentDao;
+    private StudentAccountMapper studentAccountMapper;
 
     @Override
     public Integer insert(Student student) {
-        return studentDao.insert(student);
+        return studentAccountMapper.insert(student);
     }
 
     @Override
     public void update(Student student) {
-        studentDao.update(student);
+    	studentAccountMapper.update(student);
     }
 
     @Override
     public void deleteById(Integer id) {
-        studentDao.deleteById(id);
+    	studentAccountMapper.deleteById(id);
     }
 
     @Override
     public Student getById(Integer id) {
-        return studentDao.getById(id);
+        return studentAccountMapper.getById(id);
     }
 }

@@ -9,8 +9,6 @@ import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.model.Student;
 
-
-
 @Mapper
 public interface StudentAccountMapper {
 	    @Insert(" INSERT INTO STUDENT ( "
@@ -41,11 +39,11 @@ public interface StudentAccountMapper {
 		public Integer update(Student student);
 		
 		@Delete("DELETE FROM STUDENT Where id = #{id}")
-		public int deleteDataById(String id);
+		public int deleteById(Integer id);
 		
 		@Select("SELECT * FROM STUDENT")
 		public List<Student> getList();
 
 		@Select("SELECT * FROM STUDENT WHERE id = #{id}")
-		public Student getDataById(String id);
+		public Student getById(Integer id);
 }
